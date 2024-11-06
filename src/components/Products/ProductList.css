@@ -1,0 +1,25 @@
+
+  .product-card {
+    transition: transform 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px); /* Small lift on hover for a better visual effect */
+  }
+  
+  .product-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .product-price {
+    font-size: 1.1rem;
+    color: #ffffff; /* Primary Bootstrap color */
+  }
+  
+  .product-image {
+    height: 200px;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
