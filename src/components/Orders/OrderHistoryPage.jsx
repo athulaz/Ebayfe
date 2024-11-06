@@ -11,7 +11,7 @@ const OrderHistoryPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/orders/history', {
+        const response = await axios.get('https://ebaybe.onrender.com/api/orders/history', {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
