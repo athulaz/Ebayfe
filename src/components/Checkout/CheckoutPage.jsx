@@ -47,7 +47,7 @@ const CheckoutPage = () => {
         paymentMethod,
       };
 
-      const response = await axios.post('http://localhost:5000/api/orders', orderDetails, {
+      const response = await axios.post('https://ebaybe.onrender.com/api/orders', orderDetails, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
