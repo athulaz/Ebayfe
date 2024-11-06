@@ -43,7 +43,7 @@ const Header = ({ setSearchTerm, setCategory, setPriceRange }) => {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
           {/* Center-aligned Search and Filters */}
           <div className="d-flex flex-wrap align-items-center mb-3 mb-lg-0 w-100 w-lg-auto justify-content-center">
-            <Form className="d-flex mx-2 mb-2 mb-lg-0">
+            <Form className="d-flex mx-5 mb-5 mb-lg-0">
               <FormControl
                 type="text"
                 placeholder="Search"
@@ -85,8 +85,16 @@ const Header = ({ setSearchTerm, setCategory, setPriceRange }) => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/cart">Cart ({calculateTotalItems()})</Nav.Link>
             <Nav.Link as={Link} to="/orders">Orders</Nav.Link>
+            <Button
+              variant="outline-dark"
+              size="sm"
+              onClick={toggleDarkMode}
+              className="mx-3"
+            >
+              {darkMode ? '☀️' : '🌙'}
+            </Button>
             {user ? (
-              <Nav.Link as={Button} variant="link" onClick={logout} className="ms-2 text-decoration-none">
+              <Nav.Link as={Button} variant="link" onClick={logout} className=" text-decoration-none">
                 Logout
               </Nav.Link>
             ) : (
@@ -95,15 +103,8 @@ const Header = ({ setSearchTerm, setCategory, setPriceRange }) => {
                 <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
               </>
             )}
-            {/* Small Dark/White Mode Toggle Button */}
-            <Button
-              variant="outline-dark"
-              size="sm"
-              onClick={toggleDarkMode}
-              className="ms-3"
-            >
-              {darkMode ? '☀️' : '🌙'}
-            </Button>
+        
+         
           </Nav>
         </Navbar.Collapse>
       </Container>

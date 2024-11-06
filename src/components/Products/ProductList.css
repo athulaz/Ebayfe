@@ -22,4 +22,22 @@
     max-width: 100%;
     padding: 10px;
   }
+
+  .pagination .page-item .page-link {
+    background-color: #385f4f; /* Blue for non-active page items */
+    color: white; /* Text color for non-active pages */
+    border: 1px solid #ecf1f5; /* Blue border */
+  }
+  
+  .pagination .page-item.active .page-link {
+    background-color: rgb(68, 97, 70); /* Black for active page */
+    border-color: rgb(239, 231, 231); /* Black border */
+    color: white; /* Text color for active page */
+  }
+  
+  .pagination .page-item .page-link:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly lighter blue on hover */
+    border-color: #a8b0b8;
+    color: white; /* Ensures text remains visible on hover */
+  }
   

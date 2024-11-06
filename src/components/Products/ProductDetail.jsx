@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const { products } = useContext(ProductContext);
   const { addToCart, removeFromCart, cart } = useContext(CartContext);
   const { id } = useParams();
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
     addToCart(product);
     toast.success(`${product.name} added to cart!`);
-    navigate('/cart'); // Redirect to the cart page
+    navigate('/cart');
   };
 
   const handleRemoveFromCart = () => {
@@ -47,10 +47,10 @@ const ProductDetail = () => {
       <Row>
         <Col md={6}>
           <img
-            src={product.image}
+            src={product.images && product.images.length > 0 ? product.images[0] : '/placeholder.jpg'} // Updated to use product.images array
             alt={product.name}
             className="img-fluid rounded shadow-sm"
-            style={{ maxHeight: '400px', objectFit: 'cover' }}
+            style={{ maxHeight: '200px', objectFit: 'cover' }}
           />
         </Col>
         <Col md={6}>

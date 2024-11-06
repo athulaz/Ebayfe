@@ -42,19 +42,29 @@ const CartPage = () => {
                   className="d-flex justify-content-between align-items-center border-bottom pb-3"
                   style={{ paddingBottom: '10px' }}
                 >
+                  <div className="d-flex">
+                    <div>
+                      <h5 className="mb-2">{item.product.name}</h5>
+                      <p className="mb-1">Price: ${item.product.price}</p>
+                      <Form.Control
+                        type="number"
+                        value={item.quantity}
+                        onChange={(e) => handleQuantityChange(item.productId, parseInt(e.target.value))}
+                        style={{ width: '70px', display: 'inline-block', marginRight: '10px' }}
+                        min="1"
+                      />
+                      <Button variant="dark" onClick={() => handleRemove(item.productId)} size="sm">
+                        Remove
+                      </Button>
+                    </div>
+                  </div>
                   <div>
-                    <h5 className="mb-2">{item.product.name}</h5>
-                    <p className=" mb-1">Price: ${item.product.price}</p>
-                    <Form.Control
-                      type="number"
-                      value={item.quantity}
-                      onChange={(e) => handleQuantityChange(item.productId, parseInt(e.target.value))}
-                      style={{ width: '70px', display: 'inline-block', marginRight: '10px' }}
-                      min="1"
+                    <img
+                      src={item.product.images && item.product.images.length > 0 ? item.product.images[0] : '/placeholder.jpg'}
+                      alt={item.product.name}
+                      className="img-fluid"
+                      style={{ maxWidth: '100px', maxHeight: '100px', objectFit: 'contain' }}
                     />
-                    <Button variant="dark" onClick={() => handleRemove(item.productId)} size="sm">
-                      Remove
-                    </Button>
                   </div>
                 </div>
               </Col>
@@ -68,7 +78,7 @@ const CartPage = () => {
               <Button
                 variant="dark"
                 onClick={handleCheckout}
-                className="mt-3 w-25"
+                className="mt-3 w-50"
               >
                 Proceed to Checkout
               </Button>
